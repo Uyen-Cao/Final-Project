@@ -1,0 +1,8 @@
+.btnCategory{
+    -fx-background-color:  #43afe3;
+    -fx-background-radius:  0em;
+}
+
+.btnCategory:hover {
+    -fx-background-color:  #3781a4;
+}
