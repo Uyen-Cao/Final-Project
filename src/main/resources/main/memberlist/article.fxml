@@ -1,46 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="245.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.memberlist.ArticleController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="245.0" prefWidth="390.0" style="-fx-border-color: black; -fx-border-width: 1px;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.memberlist.ArticleController">
    <children>
-      <VBox alignment="CENTER" layoutX="19.0" layoutY="-10.0" prefHeight="258.0" prefWidth="352.0">
-         <children>
-            <ImageView fx:id="articleImage" fitHeight="163.0" fitWidth="258.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/image-demo.png" />
-               </image>
-            </ImageView>
-            <VBox prefHeight="99.0" prefWidth="266.0">
-               <padding>
-                  <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-               </padding>
-               <children>
-                  <Label fx:id="title" prefHeight="27.0" prefWidth="347.0" text="This is the title!!">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
-                  </Label>
-                  <Text fx:id="content" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the content!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" wrappingWidth="340.1905212402344">
-                     <font>
-                        <Font size="12.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the date.">
-                     <font>
-                        <Font size="10.0" />
-                     </font>
-                  </Text>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
+      <Text fx:id="title" layoutX="11.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the title. This is the title. This is the title. This is the title" wrappingWidth="368.111328125">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="content" layoutX="185.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the content!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. This is the content!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. This is the content!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt." textAlignment="JUSTIFY" wrappingWidth="182.19052124023438">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="date" layoutX="65.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This is the date.">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="articleImage" fitHeight="118.0" fitWidth="165.0" layoutX="19.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/image-demo.png" />
+         </image>
+      </ImageView>
    </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
 </Pane>

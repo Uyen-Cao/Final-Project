@@ -14,10 +14,25 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class presentArticleMethod {
-    public static List<Article> presentArticles() throws Exception {
+    public static List<Article> presentArticles(String category) throws Exception {
         List<Article> ls = new ArrayList<>();
+        String url = null;
+        if(category.equals("")){
+            url = "https://vnexpress.net/rss/tin-moi-nhat.rss";
+        }else if (category.equals("World")){
+            url = "https://vnexpress.net/rss/the-gioi.rss";
+        }else if(category.equals("Covid")){
+            url = "https://vnexpress.net/rss/suc-khoe.rss";
+        }else if(category.equals("Business")){
+            url = "https://vnexpress.net/rss/kinh-doanh.rss";
+        }else if(category.equals("Health")){
+            url = "https://vnexpress.net/rss/suc-khoe.rss";
+        }else if(category.equals("Sports")){
+            url = "https://vnexpress.net/rss/the-thao.rss";
+        }else if(category.equals("Technology")){
+            url = "https://vnexpress.net/rss/khoa-hoc.rss";
+        }
 
-        String url = "https://vnexpress.net/rss/tin-moi-nhat.rss";
 
         URL feedUrl = new URL(url);
         SyndFeedInput input = new SyndFeedInput();

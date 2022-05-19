@@ -18,12 +18,13 @@ public class ArticleController {
     private Text date;
 
     @FXML
-    private Label title;
+    private Text title;
 
     public void setData(Article article){
         Image image = new Image(article.getImage());
         articleImage.setImage(image);
         //content.setText(article.getLead());
         title.setText(article.getTitle());
+        //content.setText(article.getLead());
     }
 }
