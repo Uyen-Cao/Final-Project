@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="rome-1.18.0">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/rome-1.18.0.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC />
     <SOURCES />
   </library>

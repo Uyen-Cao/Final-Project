@@ -1,10 +1,9 @@
 module main.memberlist {
     requires javafx.controls;
     requires javafx.fxml;
-    requires json.simple;
+    //requires json.simple;
     requires com.rometools.rome;
     requires org.jsoup;
-    requires rome;
 
 
     opens main.memberlist to javafx.fxml;

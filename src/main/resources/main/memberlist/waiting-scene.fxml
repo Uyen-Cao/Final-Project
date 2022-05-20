@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.memberlist.WaitingScene">
+   <children>
+      <ProgressBar fx:id="progressBar" layoutX="200.0" layoutY="190.0" prefWidth="200.0" progress="0.0" />
+      <Text layoutX="274.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Loading..." />
+      <Label fx:id="articleTitle" text="This is the title, please render the title here!!!" />
+   </children>
+</AnchorPane>

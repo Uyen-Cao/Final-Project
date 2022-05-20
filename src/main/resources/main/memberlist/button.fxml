@@ -9,7 +9,7 @@
    <graphic>
       <ImageView fx:id="logo" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/Business.png" />
+            <Image url="@../../images/business.png" />
          </image>
       </ImageView>
    </graphic>
