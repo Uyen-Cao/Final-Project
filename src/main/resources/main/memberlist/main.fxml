@@ -142,7 +142,7 @@
                      <content>
                         <ScrollPane prefHeight="200.0" prefWidth="200.0">
                            <content>
-                              <GridPane fx:id="firstPage" prefHeight="1000.0" prefWidth="1170.0">
+                              <GridPane fx:id="firstPage" prefHeight="607.0" prefWidth="1170.0">
                                 <rowConstraints>
                                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
@@ -155,7 +155,7 @@
                      <content>
                         <ScrollPane prefHeight="200.0" prefWidth="200.0">
                            <content>
-                              <GridPane fx:id="secondPage" prefHeight="1000.0" prefWidth="1170.0">
+                              <GridPane fx:id="secondPage" prefHeight="597.0" prefWidth="1170.0">
                                  <rowConstraints>
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                  </rowConstraints>

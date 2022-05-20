@@ -81,8 +81,17 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources){
 
         myTabPane.getSelectionModel().selectedItemProperty().addListener((ov, oldTab, newTab) -> {
+//            Parent root = null;
+//            try {
+//                root = FXMLLoader.load(getClass().getResource("waiting-scene.fxml"));
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            Scene newScene = new Scene(root);
+//            Stage stage = new Stage();
+//            stage.setScene(newScene);
+//            stage.show();
             try {
-                secondPage.getChildren().clear();
                 renderArticles(presentArticleMethod.presentArticles(""), newTab.getText());
                 System.out.println("123");
             } catch (Exception e) {
@@ -104,40 +113,106 @@ public class MainController implements Initializable {
         int row = 1;
         System.out.println(page);
 
+            Task progressBarHandle = new Task() {
+                @Override
+                protected Object call() throws Exception {
+                    for(int i = 0; i < 10; i++) {
+                            System.out.println("Child Thread");
+                            updateProgress(i+1, 10);
+                            Thread.sleep(3000);
 
-        try{
-            if(page.equals("1")){
-                secondPage.getChildren().clear();
-                for(int i = 0; i < 10; i++){
-                    System.out.println(i);
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("article.fxml"));
-                    Pane cardBox = null;
-                    cardBox = fxmlLoader.load();
-                    ArticleController articleController = fxmlLoader.getController();
-                    articleController.setData(presentArticles.get(i));
-                    if(column == 3){
-                        column = 0;
-                        ++row;
                     }
-                    secondPage.add(cardBox, column++, row);
+                    return null;
                 }
-            }else if(page.equals("2")) {
-                secondPage.getChildren().clear();
-                for (int i = 10; i < 20; i++) {
-                    System.out.println(i);
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("article.fxml"));
-                    Pane cardBox = fxmlLoader.load();
-                    ArticleController articleController = fxmlLoader.getController();
-                    articleController.setData(presentArticles.get(i));
-                    if (column == 3) {
-                        column = 0;
-                        ++row;
+            };
+        progressBar.progressProperty().bind(progressBarHandle.progressProperty());
+        new Thread(progressBarHandle).start();
+        if(page.equals("1")){
+
+            Task loadingArticle = new Task() {
+                int column = 0;
+                int row = 1;
+                @Override
+                protected Object call() throws Exception {
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            firstPage.getChildren().clear();
+                        }
+                    });
+                    for(int i = 0; i < 10; i++){
+                        System.out.println(i);
+                        int finalI = i;
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                FXMLLoader fxmlLoader = new FXMLLoader();
+                                fxmlLoader.setLocation(getClass().getResource("article.fxml"));
+                                Pane cardBox = null;
+                                try {
+                                    cardBox = fxmlLoader.load();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                ArticleController articleController = fxmlLoader.getController();
+                                articleController.setData(presentArticles.get(finalI));
+                                if(column == 5){
+                                    column = 0;
+                                    ++row;
+                                }
+                                firstPage.add(cardBox, column++, row);
+                            }
+                        });
+                        Thread.sleep(3000);
                     }
-                    secondPage.add(cardBox, column++, row);
+                    return null;
                 }
-            }
+            };
+            new Thread(loadingArticle).start();
+
+        }else if(page.equals("2")) {
+
+            Task loadingArticle = new Task() {
+                int column = 0;
+                int row = 1;
+                @Override
+                protected Object call() throws Exception {
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            secondPage.getChildren().clear();
+                        }
+                    });
+                    for(int i = 10; i < 20; i++){
+                        System.out.println(i);
+                        int finalI = i;
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                FXMLLoader fxmlLoader = new FXMLLoader();
+                                fxmlLoader.setLocation(getClass().getResource("article.fxml"));
+                                Pane cardBox = null;
+                                try {
+                                    cardBox = fxmlLoader.load();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                ArticleController articleController = fxmlLoader.getController();
+                                articleController.setData(presentArticles.get(finalI));
+                                if(column == 5){
+                                    column = 0;
+                                    ++row;
+                                }
+                                secondPage.add(cardBox, column++, row);
+                            }
+                        });
+                        Thread.sleep(3000);
+                    }
+                    return null;
+                }
+            };
+            new Thread(loadingArticle).start();
+        }
 //            else if(page.equals("3")){
 //                double k = 0.1;
 //                thirdPage.getChildren().clear();
@@ -188,11 +263,5 @@ public class MainController implements Initializable {
 //                    fifthPage.add(cardBox, column++, row);
 //                }
 //            }
-        }catch(IOException e){
-            e.printStackTrace();
-        }
     }
-
-
-
 }

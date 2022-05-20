@@ -41,13 +41,14 @@ public class presentArticleMethod {
             System.out.println("-----------------------------");
             System.out.println("Title : " + entry.getTitle());
             System.out.println("Author: "+entry.getDescription().getValue());
+            System.out.println("Author: "+entry.getPublishedDate());
             String convertedURL = getURLInString(entry.getDescription().getValue());
-            System.out.println("Link URL  : "+convertedURL);
+            System.out.println("Link URL  : "+ convertedURL);
             if(convertedURL == null){
                 convertedURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png";
             }
             System.out.println("Link  : "+entry.getLink());
-            Article newArticle = new Article("123", entry.getTitle(), entry.getUri(), convertedURL);
+            Article newArticle = new Article("123", entry.getTitle(), entry.getUri(), convertedURL, entry.getPublishedDate());
             ls.add(newArticle);
         }
         return ls;
