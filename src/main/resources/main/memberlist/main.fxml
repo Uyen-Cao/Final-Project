@@ -14,13 +14,12 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="900.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.memberlist.MainController">
+<BorderPane prefHeight="800.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.memberlist.MainController">
    <left>
       <VBox fx:id="btnCategories" prefHeight="797.0" prefWidth="270.0" style="-fx-background-color: #43afe3#43afe3;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="categoryButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="News">
+            <Button fx:id="btnNews" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonNewsClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="News">
                <font>
                   <Font size="21.0" />
                </font>
@@ -32,7 +31,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="categoryButton1" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="World">
+            <Button fx:id="btnWorld" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonWorldClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="World">
                <font>
                   <Font size="21.0" />
                </font>
@@ -44,7 +43,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="categoryButton2" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Covid">
+            <Button fx:id="btnCovid" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonCovidClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Covid">
                <font>
                   <Font size="21.0" />
                </font>
@@ -56,7 +55,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="categoryButton3" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Business">
+            <Button fx:id="btnBusiness" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonBusinessClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Business">
                <font>
                   <Font size="21.0" />
                </font>
@@ -68,7 +67,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="categoryButton4" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Health">
+            <Button fx:id="btnHealth" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonHealthClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Health">
                <font>
                   <Font size="21.0" />
                </font>
@@ -80,7 +79,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="categoryButton5" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Sports">
+            <Button fx:id="btnSport" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonSportClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Sports">
                <font>
                   <Font size="21.0" />
                </font>
@@ -92,7 +91,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="categoryButton6" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Technology">
+            <Button fx:id="btnTech" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonTechClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Technology">
                <font>
                   <Font size="21.0" />
                </font>
@@ -104,7 +103,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="categoryButton7" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Others">
+            <Button fx:id="btnOther" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonOtherClick" prefHeight="73.0" prefWidth="275.0" styleClass="btnCategory" stylesheets="@../../css/styling.css" text="Others">
                <font>
                   <Font size="21.0" />
                </font>
@@ -118,14 +117,9 @@
                <children>
                   <ImageView fitHeight="61.0" fitWidth="297.0" layoutX="27.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/Users/macbookpro/IdeaProjects/MemberList/src/main/resources/images/logo.png" />
+                        <Image url="@../../images/logo.png" />
                      </image>
                   </ImageView>
-                  <Text layoutX="19.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Online News" wrappingWidth="114.66670227050781">
-                     <font>
-                        <Font size="21.0" />
-                     </font>
-                  </Text>
                </children>
             </Pane>
          </children>
@@ -192,32 +186,6 @@
                         <ScrollPane prefHeight="200.0" prefWidth="200.0">
                            <content>
                               <GridPane fx:id="fifthPage" prefHeight="1000.0" prefWidth="1170.0">
-                                 <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                              </GridPane>
-                           </content>
-                        </ScrollPane>
-                     </content>
-                  </Tab>
-                  <Tab text="6">
-                     <content>
-                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                           <content>
-                              <GridPane fx:id="sixthPage" prefHeight="1000.0" prefWidth="1170.0">
-                                 <rowConstraints>
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                              </GridPane>
-                           </content>
-                        </ScrollPane>
-                     </content>
-                  </Tab>
-                  <Tab text="7">
-                     <content>
-                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
-                           <content>
-                              <GridPane fx:id="seventhPage" prefHeight="1000.0" prefWidth="1170.0">
                                  <rowConstraints>
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                  </rowConstraints>

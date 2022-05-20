@@ -21,9 +21,10 @@ public class ArticleController {
     private Label title;
 
     public void setData(Article article){
-        Image image = new Image(article.getImage());
+        Image image = new Image(article.getThumbnail_url());
         articleImage.setImage(image);
-        //content.setText(article.getLead());
+        content.setText(article.getSource());
         title.setText(article.getTitle());
+        date.setText(article.getTimePassed());
     }
 }
