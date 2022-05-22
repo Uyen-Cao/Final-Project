@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="rome-utils-1.5.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/rome-utils-1.5.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../rome-utils-1.5.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
